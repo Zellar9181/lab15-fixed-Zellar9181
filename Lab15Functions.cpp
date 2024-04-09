@@ -40,10 +40,14 @@ void getInfo(int & pickFrom, int & numPicks){
 // multiplying two factorials together. This is done to prevent any
 // intermediate result becoming so large that it causes overflow.
 double computeWays(int n, int k){
-    
+    double ways = factorial(n)/(factorial(k)*factorial(n-k));
+    return ways;
 }
 
 // This function computes factorials recursively. It is called by computeWays.
 double factorial(int n){
-
+    if (n==0)
+        return 1;
+    else
+        return n*factorial(n-1);
 }
